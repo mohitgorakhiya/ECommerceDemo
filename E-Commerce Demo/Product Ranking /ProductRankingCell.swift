@@ -10,6 +10,7 @@ import UIKit
 
 class ProductRankingCell: UITableViewCell {
 
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     

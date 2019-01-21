@@ -25,4 +25,10 @@ class BaseViewController: UIViewController {
     @objc func backButtonClicked() {
         self.navigationController?.popViewController(animated: true)
     }
+    func getDisplayStringFrom(productDate: Date) -> String {
+        
+        let dateFormatter = DateFormatter.init()
+        dateFormatter.dateStyle = .medium
+        return dateFormatter.string(from: productDate)
+    }
 }

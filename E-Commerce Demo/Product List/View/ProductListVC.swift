@@ -49,7 +49,7 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         let productListCell = tableView.dequeueReusableCell(withIdentifier: "ProductListCell") as? ProductListCell
         
         let productVarient = self.productVarientList[indexPath.row]
-        
+                
         var sizeStr = "\(productVarient.varientSize)"
         if sizeStr.count == 0 {
             sizeStr = "--"
@@ -77,6 +77,8 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         
         let totalAmount = productVarient.varientPrice + taxAmount
         productListCell?.totalLabel.text = "Total: \(totalAmount)"
+        
+        
         
         productListCell?.selectionStyle = .none
         return productListCell!

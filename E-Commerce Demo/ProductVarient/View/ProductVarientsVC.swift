@@ -18,7 +18,7 @@ class ProductVarientsVC: BaseViewController {
         
         super.viewDidLoad()
         self.title = self.categoryObj.categoryName ?? ""
-        self.varientTableView.register(UINib.init(nibName: "CategoryCell", bundle:nil), forCellReuseIdentifier: "CategoryCell")
+        self.varientTableView.register(UINib.init(nibName: "ProductRankingCell", bundle:nil), forCellReuseIdentifier: "ProductRankingCell")
         self.varientTableView.tableFooterView = UIView(frame: .zero)
         self.varientTableView.estimatedRowHeight = 500.0
         self.varientTableView.rowHeight = UITableView.automaticDimension
@@ -45,8 +45,8 @@ extension ProductVarientsVC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let categoryCell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell
-        
+        let productCell = tableView.dequeueReusableCell(withIdentifier: "ProductRankingCell") as? ProductRankingCell
+        productCell?.countLabel.isHidden = true
         let productObj = self.productsArray[indexPath.row]
         
         let productNameAttributedStr = NSMutableAttributedString.init(string: productObj.productName ?? "")
@@ -57,10 +57,13 @@ extension ProductVarientsVC: UITableViewDelegate, UITableViewDataSource {
         varientAttributedStr.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: 13.0), range: NSRange.init(location: 0, length: varientAttributedStr.length))
         varientAttributedStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: NSRange.init(location: 0, length: varientAttributedStr.length))
         productNameAttributedStr.append(varientAttributedStr)
-        categoryCell?.categoryLabel.text = ""
-        categoryCell?.categoryLabel.attributedText = productNameAttributedStr
+        productCell?.productNameLabel.text = ""
+        productCell?.productNameLabel.attributedText = productNameAttributedStr
         
-        return categoryCell!
+        let productDateStr = self.getDisplayStringFrom(productDate: productObj.productDate! as Date)
+        productCell?.dateLabel.text = "Date Added: \(productDateStr)"
+        
+        return productCell!
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

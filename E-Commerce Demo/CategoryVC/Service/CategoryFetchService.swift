@@ -44,19 +44,16 @@ class CategoryFetchService {
                         categoryObj.categoryName = categoryDict["name"] as? String ?? ""
                         
                         categoryObj.categoryId = categoryDict["id"] as? Int64 ?? 0
-                        if nameFilter.count > 0
-                        {
+                        if nameFilter.count > 0 {
                             let pcategoryDict = nameFilter[0] as! Dictionary<String, Any>
                             categoryObj.parentId = pcategoryDict["id"] as? Int64 ?? 0
                         }
-                        else
-                        {
+                        else {
                             categoryObj.parentId = 0
                         }
                         
                         let productArray = categoryDict["products"] as! Array<Any>
-                        for productIndex in 0..<productArray.count
-                        {
+                        for productIndex in 0..<productArray.count {
                             let productDict = productArray[productIndex] as! Dictionary<String, Any>
                             
                             let productEntity = NSEntityDescription.entity(forEntityName: "ProductList", in: managedContext)!
@@ -64,12 +61,28 @@ class CategoryFetchService {
                             
                             productObj.productId = productDict["id"] as? Int64 ?? 0
                             productObj.productName = productDict["name"] as? String ?? ""
-                            productObj.productDate = NSDate.init()
+                            
+                            var strDate = productDict["date_added"] as? String ?? ""
+                            strDate = strDate.replacingOccurrences(of: "T", with: " ")
+                            var productDate: NSDate!
+                            if strDate.count > 0 {
+                                let dateFormatter = DateFormatter.init()
+                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSZ"
+                                let date = dateFormatter.date(from: strDate)
+                                if date != nil {
+                                    productDate = date! as NSDate
+                                }
+                            }
+                            
+                            if productDate == nil {
+                                productDate = NSDate.init()
+                            }
+                            productObj.productDate = productDate
+                        
                             productObj.addToProductToCategory(categoryObj)
                             
                             let varientsArray = productDict["variants"] as! Array<Any>
-                            for varientIndex in 0..<varientsArray.count
-                            {
+                            for varientIndex in 0..<varientsArray.count {
                                 let varientDict = varientsArray[varientIndex] as! Dictionary<String, Any>
                                 
                                 let varientEntity = NSEntityDescription.entity(forEntityName: "ProductVarients", in: managedContext)!
@@ -90,16 +103,14 @@ class CategoryFetchService {
                     }
                     
                     let rankingArray = jsonObj["rankings"].arrayObject!
-                    for i in 0..<rankingArray.count
-                    {
+                    for i in 0..<rankingArray.count {
                         let rankDict = rankingArray[i] as! Dictionary<String, Any>
                         
                         let rankingEntity = NSEntityDescription.entity(forEntityName: "RankingList", in: managedContext)!
                         let rankingObj = NSManagedObject(entity: rankingEntity, insertInto: managedContext) as! RankingList
                         rankingObj.name = rankDict["ranking"] as? String ?? ""
                         
-                        if rankingObj.name == "Most Viewed Products"
-{
+                        if rankingObj.name == "Most Viewed Products" {
                             rankingObj.rankingKey = "view_count"
                             rankingObj.rankingName = "View Count"
                         }

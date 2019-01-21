@@ -58,6 +58,7 @@ extension ProductRankingVC: UITableViewDelegate, UITableViewDataSource {
         
         let productListCell = tableView.dequeueReusableCell(withIdentifier: "ProductRankingCell") as? ProductRankingCell
         
+        productListCell?.countLabel.isHidden = false
         let productObj = self.productsArray[indexPath.row]
         
         let productNameAttributedStr = NSMutableAttributedString.init(string: productObj.productName ?? "")
@@ -81,6 +82,10 @@ extension ProductRankingVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         productListCell?.countLabel.text = "\(rankingObj.rankingName ?? "Count"): \(countValue)"
+        
+        let productDateStr = self.getDisplayStringFrom(productDate: productObj.productDate! as Date)
+        productListCell?.dateLabel.text = "Date Added: \(productDateStr)"
+
         
         return productListCell!
         
