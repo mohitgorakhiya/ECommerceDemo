@@ -12,4 +12,5 @@ struct Constant {
     static let ECOMMERCEDATAAPI = "https://stark-spire-93433.herokuapp.com/json"
     static let isDataSavedToLocal = "isDataSavedToLocal"
     static let navigationColor = UIColor.init(hex: "D81059")
+    static let ProductDateFormat = "yyyy-MM-dd HH:mm:ss.SSSZ"
 }

@@ -66,19 +66,17 @@ extension ProductListVC: UITableViewDelegate, UITableViewDataSource {
         if productPrice.count == 0 {
             productPrice = "0"
         }
-        productListCell?.priceLabel.text = "Price: \(productPrice)"
+        productListCell?.priceLabel.text = "Price: \(productPrice) Rs."
         
         var taxValue = "\(productObj.taxValue)"
         if taxValue.count == 0 {
             taxValue = "0"
         }
         let taxAmount = (productVarient.varientPrice * productObj.taxValue) / 100.0
-        productListCell?.taxLabel.text = "Tax (\(productObj.taxName ?? ""): \(taxValue)%): \(taxAmount)"
+        productListCell?.taxLabel.text = "Tax (\(productObj.taxName ?? ""): \(taxValue)%): \(taxAmount) Rs."
         
         let totalAmount = productVarient.varientPrice + taxAmount
-        productListCell?.totalLabel.text = "Total: \(totalAmount)"
-        
-        
+        productListCell?.totalLabel.text = "Total: \(totalAmount) Rs."
         
         productListCell?.selectionStyle = .none
         return productListCell!

@@ -67,7 +67,7 @@ class CategoryFetchService {
                             var productDate: NSDate!
                             if strDate.count > 0 {
                                 let dateFormatter = DateFormatter.init()
-                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSZ"
+                                dateFormatter.dateFormat = Constant.ProductDateFormat
                                 let date = dateFormatter.date(from: strDate)
                                 if date != nil {
                                     productDate = date! as NSDate

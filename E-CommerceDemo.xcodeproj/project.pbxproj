@@ -19,8 +19,6 @@
 		3B25504121F460120004C86A /* ProductList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503921F460120004C86A /* ProductList+CoreDataProperties.swift */; };
 		3B25504221F460120004C86A /* ProductVarients+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503A21F460120004C86A /* ProductVarients+CoreDataClass.swift */; };
 		3B25504321F460120004C86A /* ProductVarients+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503B21F460120004C86A /* ProductVarients+CoreDataProperties.swift */; };
-		3B25504421F460120004C86A /* TaxInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503C21F460120004C86A /* TaxInfo+CoreDataClass.swift */; };
-		3B25504521F460120004C86A /* TaxInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503D21F460120004C86A /* TaxInfo+CoreDataProperties.swift */; };
 		3B25504621F460120004C86A /* CategoryList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503E21F460120004C86A /* CategoryList+CoreDataClass.swift */; };
 		3B25504721F460120004C86A /* CategoryList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25503F21F460120004C86A /* CategoryList+CoreDataProperties.swift */; };
 		3B25504A21F46A3F0004C86A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B25504921F46A3F0004C86A /* CategoryCell.swift */; };
@@ -72,8 +70,6 @@
 		3B25503921F460120004C86A /* ProductList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B25503A21F460120004C86A /* ProductVarients+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductVarients+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B25503B21F460120004C86A /* ProductVarients+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProductVarients+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3B25503C21F460120004C86A /* TaxInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaxInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3B25503D21F460120004C86A /* TaxInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaxInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B25503E21F460120004C86A /* CategoryList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B25503F21F460120004C86A /* CategoryList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoryList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B25504921F46A3F0004C86A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
@@ -183,8 +179,6 @@
 				3B25503921F460120004C86A /* ProductList+CoreDataProperties.swift */,
 				3B25503A21F460120004C86A /* ProductVarients+CoreDataClass.swift */,
 				3B25503B21F460120004C86A /* ProductVarients+CoreDataProperties.swift */,
-				3B25503C21F460120004C86A /* TaxInfo+CoreDataClass.swift */,
-				3B25503D21F460120004C86A /* TaxInfo+CoreDataProperties.swift */,
 				3B25503E21F460120004C86A /* CategoryList+CoreDataClass.swift */,
 				3B25503F21F460120004C86A /* CategoryList+CoreDataProperties.swift */,
 			);
@@ -528,7 +522,6 @@
 				3B254FE321F4334D0004C86A /* MainCategoryVC.swift in Sources */,
 				3B254FEF21F443D60004C86A /* CategoryFetchService.swift in Sources */,
 				3B28F2C921F39C4F0060E066 /* E_Commerce_Demo.xcdatamodeld in Sources */,
-				3B25504421F460120004C86A /* TaxInfo+CoreDataClass.swift in Sources */,
 				3B25504221F460120004C86A /* ProductVarients+CoreDataClass.swift in Sources */,
 				3B28F2C121F39C4F0060E066 /* AppDelegate.swift in Sources */,
 				3B254FEC21F443480004C86A /* CategoryViewModel.swift in Sources */,
@@ -544,7 +537,6 @@
 				F82ABA2821F5BDAB0013B456 /* ProductRankingList+CoreDataClass.swift in Sources */,
 				3B254FF621F44F6A0004C86A /* CoreDataHelper.swift in Sources */,
 				3B25504121F460120004C86A /* ProductList+CoreDataProperties.swift in Sources */,
-				3B25504521F460120004C86A /* TaxInfo+CoreDataProperties.swift in Sources */,
 				3B254FE521F435FF0004C86A /* RadiusView.swift in Sources */,
 				F82ABA2721F5BDAB0013B456 /* RankingList+CoreDataProperties.swift in Sources */,
 				3B25504321F460120004C86A /* ProductVarients+CoreDataProperties.swift in Sources */,

@@ -44,23 +44,6 @@ extension ProductList {
 
 }
 
-// MARK: Generated accessors for productToTax
-extension ProductList {
-
-    @objc(addProductToTaxObject:)
-    @NSManaged public func addToProductToTax(_ value: TaxInfo)
-
-    @objc(removeProductToTaxObject:)
-    @NSManaged public func removeFromProductToTax(_ value: TaxInfo)
-
-    @objc(addProductToTax:)
-    @NSManaged public func addToProductToTax(_ values: NSSet)
-
-    @objc(removeProductToTax:)
-    @NSManaged public func removeFromProductToTax(_ values: NSSet)
-
-}
-
 // MARK: Generated accessors for productToVarient
 extension ProductList {
 
